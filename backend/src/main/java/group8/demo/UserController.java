@@ -12,23 +12,23 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @PostMapping("/setEmail")
+    @PostMapping("/set-email")
     public void setEmail(@RequestBody Email email) throws InterruptedException, ExecutionException {
         userService.setEmail(email.getEmail());
     }
 
-    @GetMapping("/getEmail")
+    @GetMapping("/get-email")
     public String getEmail() throws InterruptedException, ExecutionException {
         return userService.getEmail();
     }
 
-    @PostMapping("/findEmail")
+    @PostMapping("/find-email")
     public boolean findEmail(@RequestBody Email email) throws InterruptedException, ExecutionException {
         return userService.findEmail(email.getEmail());
     }
 
 	@PostMapping("/match-credentials")
-	public boolean getPassword (@RequestBody User user) throws InterruptedException, ExecutionException {
+	public boolean matchCredentials(@RequestBody User user) throws InterruptedException, ExecutionException {
         return (userService.getPasswordByEmail(user.getEmail()).equals(user.getPassword()));
 	}
 
