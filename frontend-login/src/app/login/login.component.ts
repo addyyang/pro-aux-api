@@ -34,17 +34,17 @@ export class LoginComponent implements OnInit {
     //call firebase
     var emailTaken;
     this.appService.findEmail(email).subscribe((bool)=>{
-      console.log(bool);
       emailTaken=bool;
+      console.log("Taken"+bool);
     });
 
+    console.log("email"+emailTaken);
     if (emailTaken) {
       var match;
       this.appService.matchPass(email, password).subscribe((p)=>{
         console.log(p);
         match=p;
       })
-
       if (match) {
           window.location.href = 'https://pro-aux-369817.ue.r.appspot.com';
           return;

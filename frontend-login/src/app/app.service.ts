@@ -19,7 +19,7 @@ export class AppService {
   }
 
   findEmail(email) {
-    return this.http.post(this.URL + '/users/find-email/', {"email": email});
+    return this.http.post(this.URL + '/users/findEmail/', {"email": email});
   }
 
   matchPass(email, pass) {

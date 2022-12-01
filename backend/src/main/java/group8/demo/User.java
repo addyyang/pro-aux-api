@@ -1,6 +1,5 @@
 package group8.demo;
 
-
 public class User {
     private String email;
     private String password;
